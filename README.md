@@ -10,7 +10,7 @@ This project will be a full-stack application that will feature a CookBook style
 
 
 ## This project will include
-*  At least 2 models (more if they make sense) that represents the main functional idea for your app.
+*  A user model along with 2 others such as a recipie model and a review model that represents the main functional for the app.
 
 * A public API that features built in Recipes, Food Products, and Meal Planning (source: https://spoonacular.com/food-api)
 
@@ -24,5 +24,6 @@ This project will be a full-stack application that will feature a CookBook style
 ## Wire-frames
 
 ![cookbook front page](https://user-images.githubusercontent.com/104868823/173106928-a735a790-8420-4f31-907e-5a2fae6f9b26.png)
-![cookbook index page](https://user-images.githubusercontent.com/104868823/173106944-5a8a15ff-97fa-4eaa-aa71-de4b8de934ff.png)
+![cookbook index page (1)](https://user-images.githubusercontent.com/104868823/173118777-c6d5c121-74f8-4a42-8aed-8f45c7545e7a.png)
 ![cookbook user page](https://user-images.githubusercontent.com/104868823/173106953-e257e23c-7bcb-4a60-9c33-519cb8f90c68.png)
+![ERD diagram project 2](https://user-images.githubusercontent.com/104868823/173128565-3af772c4-875a-428c-8732-d6ba962477bd.png)
