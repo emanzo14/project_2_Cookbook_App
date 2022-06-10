@@ -5,16 +5,16 @@
 
 ## Overview 
 
-This project will be a full-stack application that will feature a CookBook style blog where users will be able to create an account and post their recipies as well as save their favorites they come across on the site. 
+This project will be a full-stack application that will feature a CookBook style blog where users will be able to create an account and post their recipies as well as save their favorites they come across on the site. The app will feature a filtered search to find meals you're in the mood for, along with pictures, ingredients, and instructions of each recipe that is posted.
 
 
 
 ## This project will include
-*  A user model along with 2 others such as a recipie model and a review model that represents the main functional for the app.
+* A user model along with 2 others such as a recipie model and a review model that represents the main functional for the app.
 
 * A public API that features built in Recipes, Food Products, and Meal Planning (source: https://spoonacular.com/food-api)
 
-* Have complete RESTful routes for at least one of your resources with GET, POST, PUT, and DELETE
+* Have complete RESTful routes for the resources with GET, POST, PUT, and DELETE
 
 * An ODM to create a database table structure and interact with the MongoDb-stored data
 
@@ -30,3 +30,5 @@ This project will be a full-stack application that will feature a CookBook style
 ## ERD Diagram
 
 ![ERD diagram project 2](https://user-images.githubusercontent.com/104868823/173133572-34e8d34c-49e2-4a14-a1a1-bea5ed9f35dc.png)
+
+
