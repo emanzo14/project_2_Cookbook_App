@@ -10,11 +10,11 @@ This project will be a full-stack application that will feature a CookBook style
 
 
 ## This project will include
-*  At least 2 models (more if they make sense) that represents the main functional idea for your app.
+*  At least 2 models, one that represents the main functional idea for the app and user input model.
 
 * A public API that features built in Recipes, Food Products, and Meal Planning (source: https://spoonacular.com/food-api)
 
-* Have complete RESTful routes for at least one of your resources with GET, POST, PUT, and DELETE
+* Have complete RESTful routes for at least one of the resources with GET, POST, PUT, and DELETE
 
 * An ODM to create a database table structure and interact with the MongoDb-stored data
 
