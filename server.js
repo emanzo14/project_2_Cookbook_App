@@ -4,16 +4,19 @@
 // this allows us to load our env variables
 require('dotenv').config()
 const express = require('express')
+// const path = require("path")
 
 // const RecipeRouter = require('./controllers/recipe')
 const HomeRouter = require('./controllers/home')
 const RecipeRouter = require('./controllers/recipe')
 const middleware = require('./utils/middleware')
 
-////////////////////////////////////////////
-// Create our express application object
-////////////////////////////////////////////
-const app = require('liquid-express-views')(express())
+/////////////////////////////////////////////////
+// Create our Express Application Object Bind Liquid Templating Engine
+/////////////////////////////////////////////////
+const app = require("liquid-express-views")(express())
+
+
 
 ////////////////////////////////////////////
 // Middleware

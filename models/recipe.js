@@ -9,17 +9,39 @@ const mongoose = require("./connection");
 // pull schema and model from mongoose
 const { Schema, model } = mongoose;
 
+
 // make fruits schema
-const fruitsSchema = new Schema({
-  name: String,
-  color: String,
-  readyToEat: Boolean,
-});
+const recipeSchema = new Schema({
+  name: {
+    type: String,
+    required: 'This field is required'
+  },
+  description: {
+    type: String,
+    required: 'This field is required'
+  },
+  name: {
+    type: String,
+    required: 'This field is required'
+  },
+  ingredients: {
+    type: [String],
+    required: 'This field is required'
+  },
+  category: {
+    type: [String],
+    enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],
+    required: 'This field is required'
+  },
+  image: {
+    type: String, 
+  }
+})
 
-// make fruit model
-const Fruit = model("Fruit", fruitsSchema);
+// make our fruit model
+const Recipe = model("Recipe", recipeSchema)
 
-///////////////////////////////////////////////////
-// Export Model
-///////////////////////////////////////////////////
-module.exports = Fruit;
+/////////////////////////////////
+// Export our Model
+/////////////////////////////////
+module.exports = Recipe
