@@ -20,10 +20,6 @@ const recipeSchema = new Schema({
     type: String,
     required: 'This field is required'
   },
-  name: {
-    type: String,
-    required: 'This field is required'
-  },
   ingredients: {
     type: [String],
     required: 'This field is required'
@@ -38,10 +34,12 @@ const recipeSchema = new Schema({
   }
 })
 
-// make our fruit model
+// make model
 const Recipe = model("Recipe", recipeSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
 module.exports = Recipe
+
+
