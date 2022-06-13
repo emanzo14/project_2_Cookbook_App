@@ -7,6 +7,7 @@ const express = require('express')
 
 // const RecipeRouter = require('./controllers/recipe')
 const HomeRouter = require('./controllers/home')
+const RecipeRouter = require('./controllers/recipe')
 const middleware = require('./utils/middleware')
 
 ////////////////////////////////////////////
@@ -29,6 +30,8 @@ app.use('/', HomeRouter)
 app.get('/recipies', (req, res) => {
     res.render('recipe')
 })
+
+// app.use('/recipies', RecipeRouter)
 
 app.get('/new', (req, res) => {
     res.render('new')

@@ -12,8 +12,8 @@ const router = express.Router()
 // Route
 ////////////////////////////////////////////
 
-router.get('/recipe', (req, res) => {
-    res.render('recipe')
+router.get('/recipies', (req, res) => {
+    res.render('recipe.liquid')
 })
 
 ////////////////////////////////////////////
