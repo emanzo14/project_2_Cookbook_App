@@ -30,6 +30,14 @@ app.get('/recipies', (req, res) => {
     res.render('recipe')
 })
 
+app.get('/new', (req, res) => {
+    res.render('new')
+})
+
+app.get('/mine', (req, res) => {
+    res.render('show')
+})
+
 
 
 const PORT = process.env.PORT
