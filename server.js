@@ -9,6 +9,8 @@ const express = require('express')
 // const RecipeRouter = require('./controllers/recipe')
 const HomeRouter = require('./controllers/home')
 const RecipeRouter = require('./controllers/recipe')
+const NewRouter = require('./controllers/new')
+const ShowRouter = require('./controllers/show')
 const middleware = require('./utils/middleware')
 
 /////////////////////////////////////////////////
@@ -27,22 +29,24 @@ middleware(app)
 // Routes
 ////////////////////////////////////////////
 // register our routes here
-// app.use('/recipe', RecipeRouter)
+
 app.use('/', HomeRouter)
+app.use('/recipies', RecipeRouter)
+app.use('/new', NewRouter)
+app.use('/show', ShowRouter)
 
-app.get('/recipies', (req, res) => {
-    res.render('recipe')
-})
+// app.get('/recipies', (req, res) => {
+//     res.render('recipe')
+// })
 
-// app.use('/recipies', RecipeRouter)
 
-app.get('/new', (req, res) => {
-    res.render('new')
-})
+// app.get('/new', (req, res) => {
+//     res.render('new')
+// })
 
-app.get('/mine', (req, res) => {
-    res.render('show')
-})
+// app.get('/mine', (req, res) => {
+//     res.render('show')
+// })
 
 
 
