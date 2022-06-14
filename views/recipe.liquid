@@ -7,9 +7,34 @@
         <input type="text" name="food" placeholder="Enter your search">
         <input type="submit">
     </form>
+</br>
 
-
-   
+    <h5>{{ recipeData.results[0].title }}</h5>
+    <img src="{{ recipeData.results[0].image }}" width="150px">
+    <h5>{{ recipeData.results[1].title }}</h5>
+    <img src="{{ recipeData.results[1].image }}" width="150px">
+    <h5>{{ recipeData.results[2].title }}</h5>
+    <img src="{{ recipeData.results[2].image }}" width="150px">
+    <h5>{{ recipeData.results[3].title }}</h5>
+    <img src="{{ recipeData.results[3].image }}" width="150px">
+    <h5>{{ recipeData.results[4].title }}</h5>
+    <img src="{{ recipeData.results[4].image }}" width="150px">
+    <h5>{{ recipeData.results[5].title }}</h5>
+    <img src="{{ recipeData.results[5].image }}" width="150px">
+    <h5>{{ recipeData.results[6].title }}</h5>
+    <img src="{{ recipeData.results[6].image }}" width="150px">
+    <h5>{{ recipeData.results[7].title }}</h5>
+    <img src="{{ recipeData.results[7].image }}" width="150px">
+    <h5>{{ recipeData.results[8].title }}</h5>
+    <img src="{{ recipeData.results[8].image }}" width="150px">
+    <h5>{{ recipeData.results[9].title }}</h5>
+    <img src="{{ recipeData.results[9].image }}" width="150px">
+    
+    <!-- <ul>
+        {% for recipe in recipeData%}
+        <li><a href="/{{forloop.index0}}">{{results[i].title}}</a></li>
+        {% endfor %}
+    </ul>  -->
    
    
 
