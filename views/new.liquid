@@ -1,6 +1,53 @@
-{% layout 'layout.liquid'%}
-
+{% layout 'layout.liquid' %}
 {% block content %}
-    <h2>Add Your Recipie</h2>
-    
+    <div class="container-sm">
+        <form action="/new" method="POST">
+            <fieldset>
+                <legend>Add New Recipe</legend>
+                <label class="form-label">Name: </label>
+                    <input 
+                        type="text" 
+                        name="name"
+                        placeholder="Enter recipe name"
+                        class="form-control"
+                    >
+                <label class="form-label">Description:</label>
+                    <input 
+                        type="text" 
+                        name="color" 
+                        placeholder="Enter description"
+                        class="form-control"
+                    >
+                <label class="form-label">Ingredients:</label>
+                    <input 
+                        type="text" 
+                        name="color" 
+                        placeholder="Enter ingredients seperated with commas"
+                        class="form-control"
+                    >
+                </br>
+                <label class="form-label">Category:</label>
+        
+                <select name="Category">
+                    <option value="American">American</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Spaninsh">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Healthy">Healthy</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Other">Other</option>
+                  </select>
+            </fieldset>
+        </br>
+            <input 
+                type="submit" 
+                value="Create New Recipe"
+                class="btn btn-success"
+            >
+        </form>
+    </div>
 {% endblock %}

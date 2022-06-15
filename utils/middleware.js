@@ -5,10 +5,10 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const methodOverride = require('method-override')
-// const RecipeRouter = require('../controllers/recipe')
-// const UserRouter = require('../controllers/user')
-// const session = require('express-session')
-// const MongoStore = require('connect-mongo')
+const RecipeRouter = require('../controllers/recipe')
+const UserRouter = require('../controllers/user')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
 
 /////////////////////////////////
 // Middleware function

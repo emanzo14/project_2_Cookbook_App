@@ -4,6 +4,7 @@
 // this allows us to load our env variables
 require('dotenv').config()
 const express = require('express')
+const Recipe = require('./models/recipe')
 
 
 
@@ -12,7 +13,9 @@ const RecipeRouter = require('./controllers/recipe')
 const NewRouter = require('./controllers/new')
 const MineRouter = require('./controllers/mine')
 const ShowRouter = require('./controllers/show')
+const UserRouter = require('./controllers/user')
 const middleware = require('./utils/middleware')
+const recipeData = require('./controllers/recipe')
 const req = require('express/lib/request')
 
 /////////////////////////////////////////////////
@@ -37,9 +40,15 @@ app.use('/recipies', RecipeRouter)
 app.use('/new', NewRouter)
 app.use('/show', ShowRouter)
 app.use('/mine', MineRouter)
+app.use('/user', UserRouter)
 
 
 
+app.get('/:id', (req, res) => {
+    res.render('show', {
+        results: recipeData[req.params.id]
+    })
+})
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {

@@ -14,20 +14,16 @@ const { Schema, model } = mongoose;
 const recipeSchema = new Schema({
   name: {
     type: String,
-    required: 'This field is required'
   },
   description: {
     type: String,
-    required: 'This field is required'
   },
   ingredients: {
     type: [String],
-    required: 'This field is required'
   },
   category: {
     type: [String],
     enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],
-    required: 'This field is required'
   },
   image: {
     type: String, 

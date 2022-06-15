@@ -16,6 +16,16 @@ router.get('/', (req, res) => {
     res.render('new')
 })
 
+router.post('/', (req, res) => {
+    Recipe.create(req.body)
+    .then((recipies) => {
+        res.redirect('/mine')
+    })
+    .catch((error) => {
+        console.log(error);
+        res.json({ error });
+    })
+})
 
 ////////////////////////////////////////////
 // Export Router

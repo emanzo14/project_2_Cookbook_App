@@ -9,7 +9,7 @@ const express = require('express')
 const router = express.Router()
 
 ////////////////////////////////////////////
-// Route
+// Routes
 ////////////////////////////////////////////
 
 router.get('/', (req, res) => {

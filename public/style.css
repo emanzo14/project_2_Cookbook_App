@@ -8,3 +8,17 @@
     height: 200px;
     margin: 10px;
 }
+
+#search-display{
+    text-align: center;
+    margin: 20px;
+}
+
+body{
+    background-color: lightsteelblue;
+}
+
+#show-container{
+    flex-direction: column;
+    margin: 10px;
+}
