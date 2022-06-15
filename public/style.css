@@ -19,6 +19,20 @@ body{
 }
 
 #show-container{
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     margin: 10px;
+    padding: 20px;
+}
+
+#home{
+    margin: 50px;
+}
+
+p{
+    text-align: start;
+}
+
+.shadow {
+    color: black;
 }

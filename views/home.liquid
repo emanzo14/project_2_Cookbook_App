@@ -2,11 +2,19 @@
 <!-- so we need to inform all our blocks(files) -->
 {% layout 'layout.liquid'%}
 <!-- here we start our block content -->
-{% block content %} <div >
-    <div>
-        <a href="/user/signup"><button>Signup</button></a>
-        <a href="/user/login"><button>Login</button></a>
-      </div>
+{% block content %}
+    
+    <div id="home" class="col-12 col-lg-6">
+        <h1 class="display-5 fw bold mb-3">Discover our huge selection of delicious recipies</h1>
+        <p class="lead">Explore our selction of recipies including: desserts, vegetarian and vegan dinners, exquisite pasta recipies, easy baking recipies, and many more. Just sign up here for free!</p>
+        <div>
+            <a href="/user/signup"><button>Signup</button></a>
+            <a href="/user/login"><button>Login</button></a>
+        </div>
+        
+    </div>
+    
+   
 
 {% endblock %}
     

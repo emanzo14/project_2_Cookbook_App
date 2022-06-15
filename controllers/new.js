@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     Recipe.create(req.body)
-    .then((recipies) => {
+    .then((recipe) => {
         res.redirect('/mine')
     })
     .catch((error) => {

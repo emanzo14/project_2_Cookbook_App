@@ -14,16 +14,20 @@ const { Schema, model } = mongoose;
 const recipeSchema = new Schema({
   name: {
     type: String,
+    required: true
   },
   description: {
     type: String,
+    required: true
   },
   ingredients: {
     type: [String],
+    required: true
   },
   category: {
-    type: [String],
+    type: String,
     enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],
+    required: true
   },
   image: {
     type: String, 
@@ -32,6 +36,7 @@ const recipeSchema = new Schema({
 
 // make model
 const Recipe = model("Recipe", recipeSchema)
+
 
 /////////////////////////////////
 // Export our Model

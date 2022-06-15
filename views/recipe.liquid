@@ -8,13 +8,20 @@
         <input type="submit">
     </form>
 </br>
-<div id="show-container">
-     <ul>
+<div class="container">
+    <div class="row">
         {% for results in recipeData.results %}
-        <li><a href="/{{forloop.index0}}">{{ results.title }}</a></li>
-        <li><a href="/{{forloop.index0}}"><img src="{{ results.image }}" width="150px"></a></li>
+        <div class="col-9 display-5" ><p>{{ results.title }}</p></div>
+        
+        <div class="col-4 shadow"><img src="{{ results.image }}" width="350px"></div>
+        
+        <div class="col-4"><a href="/{{ results.id }}" class="btn btn-info">
+            View Recipie
+            </a>
+        </div>
         {% endfor %}
-    </ul> 
+        </div>
+    </div>
 </div>
 
    

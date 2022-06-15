@@ -38,6 +38,7 @@ router.post('/signup', async (req, res) => {
         .catch(error => {
             console.log(error)
             res.json(error)
+           
         })
 })
 
@@ -69,7 +70,7 @@ router.post('/login', async (req, res) => {
 
                     console.log('session user id', req.session.userId)
                     // redirect to /fruits if login is successful
-                    res.redirect('/recipe')
+                    res.redirect('/mine')
                 } else {
                     // send an error if the password doesnt match
                     res.json({ error: 'username or password incorrect'})
