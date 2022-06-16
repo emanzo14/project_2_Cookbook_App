@@ -2,6 +2,7 @@
 // Import Dependencies
 //////////////////////////////////////////////
 const mongoose = require("./connection");
+const User = require('./user')
 
 ////////////////////////////////////////////////
 // Define Model
@@ -14,7 +15,7 @@ const { Schema, model } = mongoose;
 const recipeSchema = new Schema({
   name: {type: String},
   description: {type: String},
-  ingredients: {type:[String]},
+  ingredients: {type: Array},
   category: {
     type: String,
     enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],

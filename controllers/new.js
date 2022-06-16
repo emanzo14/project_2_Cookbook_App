@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
     req.body.owner = req.session.userId
     Recipe.create(req.body)
     .then((recipe) => {
-        res.redirect('/mine')
+        res.redirect('mine')
     })
     .catch((error) => {
         console.log(error);

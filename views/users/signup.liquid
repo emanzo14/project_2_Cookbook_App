@@ -4,15 +4,20 @@
     <div class="container-sm col-12 col-lg-6">
         <form action="/user/signup" method="POST">
             <fieldset>
+                <br>
                 <legend>New User</legend>
                 <label class="form-label">Username: </label>
                 <input type="text" name="username" placeholder="username" class="form-control" required>
+            </br>
                 <label class="form-label">Password:</label>
                 <input type="password" name="password" placeholder="enter password" class="form-control" required>
             </fieldset>
         </br>
             <input type="submit" value="Create Account" class="btn btn-success">
         </form>
+        </br>
+        <div class=""><p>Already have an account? Log in here</p><a href="/user/login"><button class="btn btn-success">Login</button></a></div>
+        
     </div>
 
 {% endblock %}
