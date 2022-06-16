@@ -22,7 +22,9 @@
     "mongo-store": "^0.0.2",
     "mongoose": "^6.3.6",
     "morgan": "^1.10.0",
-    "node-fetch": "^3.2.6"
+    "node-fetch": "^3.2.6",
+    "spoonacular_api": "^1.0.0",
+    "spoonacular-api-library": "^1.0.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"

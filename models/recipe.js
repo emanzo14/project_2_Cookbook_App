@@ -12,26 +12,21 @@ const { Schema, model } = mongoose;
 
 // make fruits schema
 const recipeSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  ingredients: {
-    type: [String],
-    required: true
-  },
+  name: {type: String},
+  description: {type: String},
+  ingredients: {type:[String]},
   category: {
     type: String,
     enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],
-    required: true
-  },
-  image: {
-    type: String, 
-  }
+    },
+  image: {type: String},
+  owner: {
+    // references the type 'objectId'
+    type: Schema.Types.ObjectID,
+    // references the model: 'User'
+    ref: 'User'
+    // now that we have an owner field, let's look and replace references to the username in our fruit controllers
+},
 })
 
 // make model

@@ -43,7 +43,6 @@ app.use('/mine', MineRouter)
 app.use('/user', UserRouter)
 
 
-
 app.get('/:id', (req, res) => {
     res.render('show', {
         results: recipeData[req.params.id]

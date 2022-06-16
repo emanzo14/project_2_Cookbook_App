@@ -25,14 +25,11 @@ body{
     padding: 20px;
 }
 
-#home{
+#home {
     margin: 50px;
 }
 
-p{
+p {
     text-align: start;
 }
 
-.shadow {
-    color: black;
-}
