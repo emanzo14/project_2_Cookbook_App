@@ -36,18 +36,13 @@ middleware(app)
 // register our routes here
 
 app.use('/', HomeRouter)
-app.use('/recipies', RecipeRouter)
+app.use('/recipes', RecipeRouter)
 app.use('/new', NewRouter)
-app.use('/show', ShowRouter)
+app.use('/recipe', ShowRouter)
 app.use('/mine', MineRouter)
 app.use('/user', UserRouter)
 
 
-app.get('/:id', (req, res) => {
-    res.render('show', {
-        results: recipeData[req.params.id]
-    })
-})
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {

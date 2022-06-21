@@ -68,7 +68,7 @@ const router = express.Router()
 //     // Delete all fruits
 //   Recipe.deleteMany({}).then((data) => {
 //     // Seed Starter Fruits
-//     Recipe.create(startRecipies).then((data) => {
+//     Recipe.create(startrecipes).then((data) => {
 //       // send created fruits as response to confirm creation
 //       res.json(data);
 //     });

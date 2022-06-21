@@ -5,7 +5,7 @@
 
 ## Overview 
 
-This project will be a full-stack application that will feature a CookBook style blog where users will be able to create an account and post their recipies as well as save their favorites they come across on the site. The app will feature a filtered search to find meals you're in the mood for, along with pictures, ingredients, and instructions of each recipe that is posted.
+This project will be a full-stack application that will feature a CookBook style blog where users will be able to create an account and post their recipes as well as save their favorites they come across on the site. The app will feature a filtered search to find meals you're in the mood for, along with pictures, ingredients, and instructions of each recipe that is posted.
 
 
 

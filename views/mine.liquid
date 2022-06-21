@@ -1,6 +1,20 @@
 {% layout 'layout.liquid'%}
 
 {% block content %}
-    <h2>My Recipies</h2>
+<div id="search-display">
+    <h2 class="display-6">My recipes</h2>
+   
+</br>
+<div class="container">
+    <div class="row row-cols-2 ">
+        {% for recipe in recipes %}
+        <div class="col-6 display-6" >
+            <a href="/recipe/{{ recipe.id }}" class="btn btn-info">View</a>{{ recipe.name }}
+        </div>
+        <div class="col-9 display-6" >{{ recipe.description }}</div>
+        <div class="col-9 display-6" >{{ recipe.ingredients }}</div>
+        <div class="col-9 display-6" >{{ recipe.category }}</div>
+       {% endfor %}
     
-{% endblock %}
+    
+    {% endblock %}

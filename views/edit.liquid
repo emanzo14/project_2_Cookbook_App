@@ -2,7 +2,7 @@
 {% block content %}
 <br>
     <div class="container-sm">
-        <form action="/new" method="POST">
+        <form action="/recipe/{{ recipe.id }}?_method=PUT" method="POST">
             <fieldset>
                 <legend>Add New Recipe</legend>
                 <label class="form-label">Name: </label>
@@ -11,6 +11,7 @@
                         name="name"
                         placeholder="Enter recipe name"
                         class="form-control"
+                        value="{{ recipe.name }}"
                     >
                 <label class="form-label">Description:</label>
                     <input 
@@ -18,6 +19,7 @@
                         name="description" 
                         placeholder="Enter description"
                         class="form-control"
+                        value="{{ recipe.description }}"
                     >
                 <label class="form-label">Ingredients:</label>
                     <input 
@@ -25,6 +27,7 @@
                         name="ingredients" 
                         placeholder="Enter ingredients seperated with commas"
                         class="form-control"
+                        value="{{ recipe.ingredients }}"
                     >
                 </br>
                 <label class="form-label">Category:</label>
@@ -47,7 +50,7 @@
         </br>
             <input 
                 type="submit" 
-                value="Create New Recipe"
+                value="Edit {{ recipe.name }}"
                 class="btn btn-success"
             >
         </form>
