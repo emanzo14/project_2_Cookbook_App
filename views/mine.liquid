@@ -8,13 +8,15 @@
 <div class="container">
     <div class="row row-cols-2 ">
         {% for recipe in recipes %}
-        <div class="col-6 display-6" >
-            <a href="/recipe/{{ recipe.id }}" class="btn btn-info">View</a>{{ recipe.name }}
-        </div>
-        <div class="col-9 display-6" >{{ recipe.description }}</div>
-        <div class="col-9 display-6" >{{ recipe.ingredients }}</div>
-        <div class="col-9 display-6" >{{ recipe.category }}</div>
-       {% endfor %}
+
+            <div class="col-9 display-6" ><p>{{ recipe.name }}</p></div>
+            <div class="col-4"><img src="{{ recipe.image }}" width="350px"></div>
+            <div class="col-6"><p>{{ recipe.description }}</p><a href="/recipe/{{ recipe.id }}" class="btn btn-primary">View Recipe</a></div>
+            
+
+        {% endfor %}
     
     
     {% endblock %}
+
+ 
