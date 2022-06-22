@@ -9,6 +9,22 @@ const Recipe = require('../models/recipe')
 ////////////////////////////////////////////
 const router = express.Router()
 
+////////////////////////////////////////////
+// Router Middleware
+////////////////////////////////////////////
+// create some middleware to protect these routes
+// Authorization middleware
+router.use((req, res, next) => {
+	// checking the loggedin boolean of our session
+	if (req.session.loggedIn) {
+		// if they're logged in, go to the next thing(thats the controller)
+		next()
+	} else {
+		// if they're not logged in, send them to the login page
+		res.redirect('/user/login')
+	}
+})
+
 
 ////////////////////////////////////////////
 // Routes
@@ -51,7 +67,7 @@ router.put('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	console.log("made it")
 	const recipeId = req.params.id
-	// then we can find a fruit by its id
+	
 	Recipe.findById(recipeId)
 		.populate('comments.author')
 		// once found, we can render a view with the data

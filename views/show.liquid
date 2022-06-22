@@ -6,15 +6,6 @@
         <div class="row">
     <div class="col-8 display-2 fw-bold"><p>{{ recipe.name }}</p></div>
         </div>
-    {% if recipe.owner == userId  %}
-    <div class="row">
-        <div class="btn-group" role="group" aria-label="Basic outlined example">
-            <a href="/recipe/{{ recipe._id }}/edit"><button type="button" class="btn btn-outline-primary">edit</button></a>
-            <form action="/recipe/{{ recipe._id }}?_method=DELETE" method="POST">
-                <input class="btn btn-outline-primary" type="submit" value="delete">
-            </form>
-        </div>
-        {% endif %}
         
             <div class=" col-4 display-4"><p>Description: </p></div>
             <div class="col-12 display-6"><p>{{ recipe.description }}</p></div>
@@ -22,7 +13,18 @@
             <div class="col-12 display-6"><p>{{ recipe.ingredients }}</p></div>
             <div class="col-9"><img src="{{ recipe.image }}" alt="Recipe image"></div>
         </div>
-        <div> <p>{{ comment.note }}</p> </div>
+    </br>
+    <div class="row">
+        {% if recipes.owner == usersId %}
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <a href="/recipe/{{ recipe._id }}/edit"><button type="button" class="btn btn-outline-primary">edit</button></a>
+            <form action="/recipe/{{ recipe._id }}?_method=DELETE" method="POST">
+                <input class="btn btn-outline-primary" type="submit" value="delete">
+            </form>
+            
+        </div>
+        {% endif %}
+    </br>
         <div class="col-md-6">
             <form action="/comments/{{recipe.id}}" method="POST">
                 <fieldset>
@@ -34,6 +36,21 @@
                 <input type="submit" class="btn btn-success" value="Add Comment">
             </form>
         </br>
-        </div>
+        <!-- <div class="card mb-4 shadow">
+            <div class="card-body">
+                
+                <p>{{ comment.note }}</p>
+                <div class="d-flex justify-content-between">
+                    <small>author: {{ comment.author.username }}</small>
+                    {% if comment.author == userId %}
+                        <form action="/comments/delete/{{ recipe.id }}/{{ comment._id }}?_method=DELETE" method="POST">
+                            <input type="submit" value="X">
+                        </form>
+                    {% endif %}
+                 </div>
+               
+            </div>
+        </div> -->
+        
     </div>
 {% endblock %}

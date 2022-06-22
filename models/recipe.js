@@ -14,9 +14,9 @@ const { Schema, model } = mongoose;
 
 // make fruits schema
 const recipeSchema = new Schema({
-  name: {type: String},
-  description: {type: String},
-  ingredients: {type: Array},
+  name: {type: String, required: true},
+  description: {type: String, required: true},
+  ingredients: {type: Array, required: true},
   category: {
     type: String,
     enum: ['American', 'Thai', 'Chinese', 'Spanish', 'Italian', 'Indian', 'Seafood', 'Healthy', 'Vegan', 'Dessert', 'Other'],
