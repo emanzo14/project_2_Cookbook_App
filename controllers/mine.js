@@ -37,8 +37,6 @@ router.use((req, res, next) => {
 
 // index that shows only the user's recipes
 router.get('/', (req, res) => {
-	// find the fruits
-	// console.log("recipe")
 	Recipe.find({ owner: req.session.userId })
 		// then render a template AFTER they're found
 		.then((recipes) => {
@@ -48,7 +46,7 @@ router.get('/', (req, res) => {
 
 			res.render('mine', { recipes, username, loggedIn })
 		})
-		// show an error if there is one
+
 		.catch((error) => {
 			console.log(error)
 			res.json({ error })

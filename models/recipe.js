@@ -23,11 +23,8 @@ const recipeSchema = new Schema({
     },
   image: {type: String},
   owner: {
-    // references the type 'objectId'
     type: Schema.Types.ObjectID,
-    // references the model: 'User'
     ref: 'User'
-    // now that we have an owner field, let's look and replace references to the username in our fruit controllers
     },
     comments: [commentSchema]
 }, { timestamps: true })

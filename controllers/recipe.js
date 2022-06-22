@@ -32,16 +32,13 @@ router.get('/recipes', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-	// find the fruits
 	Recipe.find({})
-		// then render a template AFTER they're found
 		.then((recipes) => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
-			// console.log(fruits)
+			
 			res.render('recipe', { recipes })
 		})
-		// show an error if there is one
 		.catch((error) => {
 			console.log(error)
 			res.json({ error })
@@ -71,26 +68,6 @@ router.post('/', (req, res) => {
         res.json({ error })
     })  
 })
-
-//show route
-// router.get('/:id', (req, res) => {
-//   const recipeId = req.params.id
-//   const infoURL = `https://api.spoonacular.com/recipes/${recipeId}/information?includeNutrition=false`
-//   fetch(infoURL)
-//   .then((apiResponse) => {
-//     console.log("Info API Success", recipeId)
-//     return apiResponse.json()
-//   })
-//   .then((jsonData) => {
-//     console.log("here is the recipe info: ", jsonData)
-//     const recipeInfo = jsonData
-//     res.render('show', { recipeInfo })
-//     return recipeInfo.results.id
-
-// })
-// })
-
-//
 
 
 
