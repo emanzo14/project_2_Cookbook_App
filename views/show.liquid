@@ -6,6 +6,7 @@
         <div class="row">
     <div class="col-8 display-2 fw-bold"><p>{{ recipe.name }}</p></div>
         </div>
+    {% if recipe.owner == userId  %}
     <div class="row">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
             <a href="/recipe/{{ recipe._id }}/edit"><button type="button" class="btn btn-outline-primary">edit</button></a>
@@ -13,17 +14,26 @@
                 <input class="btn btn-outline-primary" type="submit" value="delete">
             </form>
         </div>
+        {% endif %}
         
-        <div class=" col-4 display-4"><p>Description: </p></div>
-  
-        <div class="col-12 display-6"><p>{{ recipe.description }}</p></div>
-        <div class="col-4 display-4"><p>Ingredients: </p></div>
-        <div class="col-12 display-6"><p>{{ recipe.ingredients }}</p></div>
-        <div class="col-9"><img src="{{ recipe.image }}" alt="Recipe image"></div>
-        
-        
-        
-        
+            <div class=" col-4 display-4"><p>Description: </p></div>
+            <div class="col-12 display-6"><p>{{ recipe.description }}</p></div>
+            <div class="col-4 display-4"><p>Ingredients: </p></div>
+            <div class="col-12 display-6"><p>{{ recipe.ingredients }}</p></div>
+            <div class="col-9"><img src="{{ recipe.image }}" alt="Recipe image"></div>
+        </div>
+        <div> <p>{{ comment.note }}</p> </div>
+        <div class="col-md-6">
+            <form action="/comments/{{recipe.id}}" method="POST">
+                <fieldset>
+                    <legend>Add Comment</legend>
+                    <label class="form-label">Comment: </label>
+                    <input type="text" class="form-control" name="note" placeholder="enter comment here...">
+                </fieldset>
+            </br>
+                <input type="submit" class="btn btn-success" value="Add Comment">
+            </form>
+        </br>
         </div>
     </div>
 {% endblock %}

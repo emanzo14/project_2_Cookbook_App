@@ -1,6 +1,7 @@
 //////////////////////////////////////////////
 // Import Dependencies
 //////////////////////////////////////////////
+const commentSchema = require("./comments");
 const mongoose = require("./connection");
 const User = require('./user')
 
@@ -27,8 +28,9 @@ const recipeSchema = new Schema({
     // references the model: 'User'
     ref: 'User'
     // now that we have an owner field, let's look and replace references to the username in our fruit controllers
-},
-})
+    },
+    comments: [commentSchema]
+}, { timestamps: true })
 
 // make model
 const Recipe = model("Recipe", recipeSchema)

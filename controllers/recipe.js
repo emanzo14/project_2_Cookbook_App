@@ -11,75 +11,42 @@ const Results = require('../models/results')
 const router = express.Router()
 
 ////////////////////////////////////////////
-// Routes
+// Router Middleware
 ////////////////////////////////////////////
-
-// router.get("/seed", (req, res) => {
-//     const startRecipes = [
-//         { name: "Key Lime pie", 
-//           description: "orange", 
-//           Ingredients: ['4 large free-range egg yolks', 
-//               '400 ml condensed milk', 
-//               '5 limes', 
-//               '200 ml double cream'],
-//           Category: 'Dessert'},
-//         { name: "Lasagne", 
-//           description: "purple", 
-//           Ingredients: ['2.5 litres Bolognese sauce (meaty)', 
-//               '1 litre white base sauce', 
-//               '400 g dried lasagne sheets', 
-//               '100 g hard cheese', 
-//               'olive oil, for greasing'],
-//           Category: 'Italian'},
-//         { name: "Fried Chicken", 
-//           description: "orange", 
-//           Ingredients: ['2 tablespoons Jollof dry spice mix', 
-//               '½ teaspoon sea salt', 
-//               '½ teaspoon coarsely ground black pepper', 
-//               '1 tablespoon rapeseed oil', 
-//               '4 higher-welfare boneless', 
-//               'skinless chicken breasts boneless', 
-//               'skinless chicken breasts', 
-//               '250 ml (9fl oz) buttermilk', 
-//               'vegetable oil'],
-//           Category: 'American'},
-//         { name: "Sweet & Sour Stir Fry", 
-//           description: "red", 
-//           Ingredients: ['100 g fine rice noodles',
-//               '1 x 227 g tin of pineapple chunks in juice',
-//               '2 heaped teaspoons cornflour',
-//               '1 tablespoon cider vinegar',
-//               '2 teaspoons low-salt soy sauce',
-//               '2 teaspoons sesame seeds',
-//               '30 g cashew nuts',
-//               '4 spring onions',
-//               '2 cloves of garlic'],
-//           Category: 'Thai'},
-//         { name: "Perfect roast beef", 
-//           description: "brown", 
-//           Ingredients: ['1.5 kg topside of beef',
-//               '2 medium onions',
-//               '2 carrots',
-//               '2 sticks celery',
-//               '1 bulb of garlic',
-//               '1 bunch of mixed fresh herbs , such as thyme, rosemary, bay, sage olive oil'],
-//           Category: 'American'},
-//       ];
-//     // Delete all fruits
-//   Recipe.deleteMany({}).then((data) => {
-//     // Seed Starter Fruits
-//     Recipe.create(startrecipes).then((data) => {
-//       // send created fruits as response to confirm creation
-//       res.json(data);
-//     });
-//   });
-// });
+// create some middleware to protect these routes
+// Authorization middleware
+router.use((req, res, next) => {
+	// checking the loggedin boolean of our session
+	if (req.session.loggedIn) {
+		// if they're logged in, go to the next thing(thats the controller)
+		next()
+	} else {
+		// if they're not logged in, send them to the login page
+		res.redirect('/user/login')
+	}
+})
 
 // index route
-router.get('/', (req, res) => {
+router.get('/recipes', (req, res) => {
     res.render('recipe')
 })
-//&addRecipeInformation=true&analyze
+
+router.get('/', (req, res) => {
+	// find the fruits
+	Recipe.find({})
+		// then render a template AFTER they're found
+		.then((recipes) => {
+			const username = req.session.username
+			const loggedIn = req.session.loggedIn
+			// console.log(fruits)
+			res.render('recipe', { recipes })
+		})
+		// show an error if there is one
+		.catch((error) => {
+			console.log(error)
+			res.json({ error })
+		})
+})
 
 
 router.post('/', (req, res) => {

@@ -14,6 +14,7 @@ const NewRouter = require('./controllers/new')
 const MineRouter = require('./controllers/mine')
 const ShowRouter = require('./controllers/show')
 const UserRouter = require('./controllers/user')
+const CommentRouter = require('./controllers/comments')
 const middleware = require('./utils/middleware')
 const recipeData = require('./controllers/recipe')
 const req = require('express/lib/request')
@@ -41,6 +42,7 @@ app.use('/new', NewRouter)
 app.use('/recipe', ShowRouter)
 app.use('/mine', MineRouter)
 app.use('/user', UserRouter)
+app.use('/comments', CommentRouter)
 
 
 

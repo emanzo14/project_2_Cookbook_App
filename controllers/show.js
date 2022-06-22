@@ -19,6 +19,8 @@ router.get("/:id/edit", (req, res) =>{
 
 	Recipe.findById(recipeId)
 	.then((recipe) => {
+		const username = req.session.username
+		const loggedIn = req.session.loggedIn
 		res.render('edit', {recipe})
 	})
 })
@@ -51,10 +53,13 @@ router.get('/:id', (req, res) => {
 	const recipeId = req.params.id
 	// then we can find a fruit by its id
 	Recipe.findById(recipeId)
+		.populate('comments.author')
 		// once found, we can render a view with the data
 		.then((recipe) => {
 			// console.log('the recipe we got', recipes)
-			
+			const username = req.session.username
+			const loggedIn = req.session.loggedIn
+			const userId = req.session.userId
 			res.render('show', {recipe})
 			
 		})
