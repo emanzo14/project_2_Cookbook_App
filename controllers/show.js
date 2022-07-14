@@ -69,14 +69,14 @@ router.get('/:id', (req, res) => {
 	const recipeId = req.params.id
 	
 	Recipe.findById(recipeId)
-		.populate('comments.author')
+		.populate('comments.note')
 		// once found, we can render a view with the data
 		.then((recipe) => {
 			// console.log('the recipe we got', recipes)
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
 			const userId = req.session.userId
-			res.render('show', {recipe})
+			res.render('show', {recipe, username, loggedIn, userId})
 			
 		})
 		// if there is an error, show that instead

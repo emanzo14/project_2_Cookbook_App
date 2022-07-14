@@ -16,7 +16,6 @@ const router = express.Router()
 ////////////////////////////////////////////
 
 router.post('/:recipeId', (req, res) => {
-    console.log("i won")
     const recipeId = req.params.recipeId
 
     req.body.author = req.session.userId
