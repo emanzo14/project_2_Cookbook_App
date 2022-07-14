@@ -46,7 +46,7 @@ router.delete('/delete/:recipeId/:commId', (req, res) => {
             const theComment = recipe.comments.id(commId)
             if ( theComment.author == req.session.userId) {
                 theComment.remove()
-                return fruit.save()
+                return recipe.save()
             } else {
                 return
             }
